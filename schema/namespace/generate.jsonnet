@@ -16,4 +16,5 @@ local ns = import 'namespace.libsonnet';
 
 {
   'create-namespace.schema.json': ns.createNamespace(),
+  'batch-create-namespace.schema.json': ns.batchCreateNamespace(),
 }
