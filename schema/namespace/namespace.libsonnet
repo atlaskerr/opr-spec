@@ -18,6 +18,7 @@ local V7 = 'http://json-schema.org/draft-07/schema#';
 
 local jid = {
   createNamespace: 'https://titan-registry.io/schema/namespace/create-namespace',
+  batchCreateNamespace: 'https://titan-registry.io/schema/namespace/batch-create-namespace',
 };
 
 local uint64 = {
@@ -38,19 +39,35 @@ local mapStringString(output=jsonschema) = {
   },
 };
 
+local createNamespaceParams(output=jsonschema) = {
+  name: { type: 'string' },
+  storageLimit: uint64,
+  repoLimit: uint64,
+  labels: mapStringString(output),
+};
+
 local createNamespace(output=jsonschema) = {
   [if output == jsonschema then '$id']: jid.createNamespace,
   [if output == jsonschema then '$schema']: V7,
   title: 'Create Namespace',
   type: 'object',
+  properties: createNamespaceParams(output),
+};
+
+local batchCreateNamespace(output=jsonschema) = {
+  [if output == jsonschema then '$id']: jid.batchCreateNamespace,
+  [if output == jsonschema then '$schema']: V7,
+  title: 'Batch Create Namespace',
+  type: 'object',
   properties: {
-    name: { type: 'string' },
-    storageLimit: uint64,
-    repoLimit: uint64,
-    labels: mapStringString(output),
+    namespaces: {
+      type: 'array',
+      properties: createNamespaceParams(output),
+    },
   },
 };
 
 {
   createNamespace:: createNamespace,
+  batchCreateNamespace:: batchCreateNamespace,
 }
