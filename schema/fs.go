@@ -209,6 +209,34 @@ func _escFSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
+	"/namespace/batch-create-namespace.schema.json": {
+		name:    "batch-create-namespace.schema.json",
+		local:   "namespace/batch-create-namespace.schema.json",
+		size:    904,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/8yTz26zMBDE7zyF5e87hhhUElqO7bWq+gobsiUbxTZab6VGEe9e8SeoJZBzr7O/Gc3a
+2kuklNL/aa8LpQ8idSiMERJwMWNFQfi8Jm9CeUALxoHFUEOJZgdSHuKSEQTjUdarPq7Hr5GFMcfgXdyr
+a8+V2TN8SJzkQ/C/wVizr5GFMOhCddVadYz/qS7iw+wEOzzd6p0NRJDd+7J7ANeXdNUsDNu5nGtslwzC
+5Co9QzVTrVlFSyl+d8RSfqdM8O4pZne6V2Uawlj7V7Iks0kWvsh+Wl2o9DHLtnmWJflDnjxtNuk23d7W
+t+QGPlnejZxghXy/VxDPUOGfqBbNthxNwAznq6WDe0wLyakjntsDUS/dgai3yYFMv7yJvgMAAP//cBw3
+q4gDAAA=
+`,
+	},
+
+	"/namespace/batch-delete-namespace.schema.json": {
+		name:    "batch-delete-namespace.schema.json",
+		local:   "namespace/batch-delete-namespace.schema.json",
+		size:    388,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/3SQQU7DMBBF9zmFNbCsO+yQvESsucPUGRJXrW2NZxOh3B3Zbgo0Yun/33+y5mswxsBz
+GMEZmFVzcYgalKIVnkJRWY4hYfEzXwkjXblk8ownUj/bkS+sbO8xHLqu45vSIZ5LiranxyQTjkKfal9e
+b+Kn2zBLyiwauIAz7Ws1vet/p//ij6NdVVtdci2gqIQ4wZ9+/Xmth2G/IRFatkmDOwYa9NKIt3oc896O
+Yz4ejrNp0unMXmFYh+8AAAD//zOI0QiEAQAA
+`,
+	},
+
 	"/namespace/create-namespace.schema.json": {
 		name:    "create-namespace.schema.json",
 		local:   "namespace/create-namespace.schema.json",
@@ -220,6 +248,18 @@ IyGE/I9HWQl5YvahUoqRtY0JGgxMlwSdCvUJjFZWGwhe16BqAs0Qz4LcjYNG421YpdQ5OBuPauKoUUfS
 nxyn5TTy3xT05DwQIwRZiQGqV1t9gPZRGayaGch+bCUmS3LNdt1K7n/44qGnC0xoG/nrv7u/ul20zrjD
 GWq+ZWaL7JewYNyuuUcIvHtDg7zIGf2N5svISmTPeV6UeZ6WT2X6st9nRVY8Qhm0kzPdYkXL0ACtmwM7
 0g38aXk0E0hGbgfP63BA4n1xQMtdd9FPAAAA///Uq161ogIAAA==
+`,
+	},
+
+	"/namespace/delete-namespace.schema.json": {
+		name:    "delete-namespace.schema.json",
+		local:   "namespace/delete-namespace.schema.json",
+		size:    266,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/1yOsY6DMAyGd54i8t14wbedlPnmvkMKLgRBEtleUMW7VyFQpE6Rvvz+9D0bYwx8hx6c
+gVE1i0PUoD5apiGI8tqGhNKNtHiMfiHJviPsaSYl+wbwU0V1eMoc4iQp2krbxAP27B9qf/8O5ddxmDll
+Yg0k4MweVeilv2DhuuaCQJRDHOD42cq7VZ8GnffJ/x5qbh+hpyHdJ+oUmq15BQAA//+Y4RVRCgEAAA==
 `,
 	},
 
@@ -241,6 +281,9 @@ var _escDirs = map[string][]os.FileInfo{
 	".": {},
 
 	"namespace": {
+		_escData["/namespace/batch-create-namespace.schema.json"],
+		_escData["/namespace/batch-delete-namespace.schema.json"],
 		_escData["/namespace/create-namespace.schema.json"],
+		_escData["/namespace/delete-namespace.schema.json"],
 	},
 }
