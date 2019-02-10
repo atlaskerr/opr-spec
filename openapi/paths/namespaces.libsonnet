@@ -12,8 +12,36 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local schema = import '../../schema/namespace/namespace.libsonnet';
+
+local mediaType = {
+  createNamespace:: 'application/vnd.opr.namespace.create.v1+json',
+  batchCreateNamespace:: 'application/vnd.opr.namespace.create.batch.v1+json',
+};
+
+local postOp = {
+  tags: ['namespaces'],
+  operationId: 'createNamespace',
+  responses: {
+    '200': {
+      description: 'OK',
+    },
+  },
+  requestBody: {
+    required: true,
+    content: {
+      [mediaType.createNamespace]: {
+        schema: schema.createNamespace('openapi'),
+      },
+      [mediaType.batchCreateNamespace]: {
+        schema: schema.batchCreateNamespace('openapi'),
+      },
+    },
+  },
+};
+
 local ops = {
-  post: {},
+  post: postOp,
 };
 
 local pathItem = {
