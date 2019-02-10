@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local paths = import 'paths.libsonnet';
+
 local license = {
   name: 'Apache 2.0',
   url: 'http://www.apache.org/licenses/LICENSE-2.0',
@@ -26,6 +28,7 @@ local info = {
 local openapi = {
   openapi: '3.0.0',
   info: info,
+  paths: paths,
 };
 
 openapi
