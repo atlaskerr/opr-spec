@@ -1,0 +1,14 @@
+{
+   "namespaces": [
+      {
+         "labels": {
+            "costCenter": "cs-bar",
+            "manager": "Frank Rotten",
+            "team": "team-bar"
+         },
+         "name": "namespace-bar",
+         "repoLimit": 50,
+         "storageLimit": 100000000000
+      }
+   ]
+}

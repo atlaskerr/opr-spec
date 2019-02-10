@@ -3,7 +3,7 @@
    "$schema": "http://json-schema.org/draft-07/schema#",
    "properties": {
       "namespaces": {
-         "properties": {
+         "items": {
             "namespace": {
                "type": "string"
             }
