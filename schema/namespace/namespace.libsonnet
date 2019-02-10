@@ -42,18 +42,19 @@ local mapStringString(output=jsonschema) = {
 };
 
 local createNamespaceParams(output=jsonschema) = {
-  name: { type: 'string' },
-  storageLimit: uint64,
-  repoLimit: uint64,
-  labels: mapStringString(output),
+  type: 'object',
+  properties: {
+    name: { type: 'string' },
+    storageLimit: uint64,
+    repoLimit: uint64,
+    labels: mapStringString(output),
+  },
 };
 
-local createNamespace(output=jsonschema) = {
+local createNamespace(output=jsonschema) = createNamespaceParams(output) {
   [if output == jsonschema then '$id']: jid.createNamespace,
   [if output == jsonschema then '$schema']: V7,
   title: 'Create Namespace',
-  type: 'object',
-  properties: createNamespaceParams(output),
 };
 
 local batchCreateNamespace(output=jsonschema) = {
@@ -64,7 +65,7 @@ local batchCreateNamespace(output=jsonschema) = {
   properties: {
     namespaces: {
       type: 'array',
-      properties: createNamespaceParams(output),
+      items: createNamespaceParams(output),
     },
   },
 };
@@ -89,7 +90,7 @@ local batchDeleteNamespace(output=jsonschema) = {
   properties: {
     namespaces: {
       type: 'array',
-      properties: deleteNamespaceParams(output),
+      items: deleteNamespaceParams(output),
     },
   },
 };
