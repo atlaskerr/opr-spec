@@ -1,1 +1,1 @@
-# Titan Registry Specification
+# Open Package Registry Specification
