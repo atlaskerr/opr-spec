@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local namespaces = import 'paths/namespaces.libsonnet';
+local namespaces = import 'namespaces.libsonnet';
 
 local paths = {
   '/namespaces': namespaces,
