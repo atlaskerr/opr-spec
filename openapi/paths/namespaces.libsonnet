@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local example = import '../../schema/namespace/golden.libsonnet';
 local schema = import '../../schema/namespace/namespace.libsonnet';
 
 local mediaType = {
@@ -32,9 +33,11 @@ local postOp = {
     content: {
       [mediaType.createNamespace]: {
         schema: schema.createNamespace('openapi'),
+        example: example.createNamespace,
       },
       [mediaType.batchCreateNamespace]: {
         schema: schema.batchCreateNamespace('openapi'),
+        example: example.batchCreateNamespace,
       },
     },
   },
