@@ -1,1 +1,1 @@
-# Open Package Registry Specification
+# Titan Distribution Specification
