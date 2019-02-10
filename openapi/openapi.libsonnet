@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local paths = import 'paths.libsonnet';
+local paths = import 'paths/paths.libsonnet';
 
 local license = {
   name: 'Apache 2.0',
