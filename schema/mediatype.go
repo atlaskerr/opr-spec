@@ -17,9 +17,17 @@ package schema
 const (
 	// MediaTypeCreateNamespace specifies the media type for creating
 	// namespaces.
-	MediaTypeCreateNamespace = "application/vnd.opr.namespace.create.v1+json"
+	MediaTypeCreateNamespace = "application/vnd.titan-distribution.namespace.create.v1+json"
 
-	// MediaTypeCreateNamespace specifies the media type for creating
+	// MediaTypeBatchCreateNamespace specifies the media type for creating
 	// namespaces in batches.
-	MediaTypeBatchCreateNamespace = "application/vnd.opr.namespace.batch.create.v1+json"
+	MediaTypeBatchCreateNamespace = "application/vnd.titan-distribution.namespace.batch-create.v1+json"
+
+	// MediaTypeDeleteNamespace specifies the media type for deleting
+	// namespaces.
+	MediaTypeDeleteNamespace = "application/vnd.titan-distribution.namespace.delete.v1+json"
+
+	// MediaTypeBatchDeleteNamespace specifies the media type for deleting
+	// namespaces in batches.
+	MediaTypeBatchDeleteNamespace = "application/vnd.titan-distribution.namespace.batch-delete.v1+json"
 )
