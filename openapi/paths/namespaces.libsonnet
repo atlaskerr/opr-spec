@@ -16,8 +16,10 @@ local example = import '../../schema/namespace/golden.libsonnet';
 local schema = import '../../schema/namespace/namespace.libsonnet';
 
 local mediaType = {
-  createNamespace:: 'application/vnd.opr.namespace.create.v1+json',
-  batchCreateNamespace:: 'application/vnd.opr.namespace.create.batch.v1+json',
+  createNamespace:: 'application/vnd.titan-distribution.namespace.create.v1+json',
+  batchCreateNamespace:: 'application/vnd.titan-distribution.namespace.batch-create.v1+json',
+  deleteNamespace:: 'application/vnd.titan-distribution.namespace.delete.v1+json',
+  batchDeleteNamespace:: 'application/vnd.titan-distribution.namespace.batch-delete.v1+json',
 };
 
 local postOp = {
@@ -39,16 +41,20 @@ local postOp = {
         schema: schema.batchCreateNamespace('openapi'),
         example: example.batchCreateNamespace,
       },
+      [mediaType.deleteNamespace]: {
+        schema: schema.deleteNamespace('openapi'),
+        example: example.deleteNamespace,
+      },
+      [mediaType.batchDeleteNamespace]: {
+        schema: schema.deleteNamespace('openapi'),
+        example: example.batchDeleteNamespace,
+      },
     },
   },
 };
 
-local ops = {
-  post: postOp,
-};
-
 local pathItem = {
-  post: ops.post,
+  post: postOp,
 };
 
 
