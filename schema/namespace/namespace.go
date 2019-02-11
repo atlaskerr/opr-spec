@@ -26,7 +26,7 @@ var (
 
 // CreateNamespaceSchema returns a gojsonschema.Schema for validation.
 func CreateNamespaceSchema() *gojsonschema.Schema {
-	path := "namespace/batch-create-namespace.schema.json"
+	path := "namespace/create-namespace.schema.json"
 	mediatype := schema.MediaTypeCreateNamespace
 	return schema.Load(path, mediatype)
 }
@@ -35,5 +35,19 @@ func CreateNamespaceSchema() *gojsonschema.Schema {
 func BatchCreateNamespaceSchema() *gojsonschema.Schema {
 	path := "namespace/batch-create-namespace.schema.json"
 	mediatype := schema.MediaTypeBatchCreateNamespace
+	return schema.Load(path, mediatype)
+}
+
+// DeleteNamespaceSchema returns a gojsonschema.Schema for validation.
+func DeleteNamespaceSchema() *gojsonschema.Schema {
+	path := "namespace/delete-namespace.schema.json"
+	mediatype := schema.MediaTypeDeleteNamespace
+	return schema.Load(path, mediatype)
+}
+
+// BatchDeleteNamespaceSchema returns a gojsonschema.Schema for validation.
+func BatchDeleteNamespaceSchema() *gojsonschema.Schema {
+	path := "namespace/batch-delete-namespace.schema.json"
+	mediatype := schema.MediaTypeBatchDeleteNamespace
 	return schema.Load(path, mediatype)
 }
