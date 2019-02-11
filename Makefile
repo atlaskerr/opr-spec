@@ -5,4 +5,4 @@ schemas:
 
 .PHONY: embed-schemas
 embed-schemas:
-	go generate schema/generate.go
+	printf "%s\n\n%s\n" "$$(cat .header)" "$$(go generate schema/generate.go)" > schema/fs.go
