@@ -23,5 +23,8 @@ local ns = import 'namespace.libsonnet';
   'batch-create-namespace.golden.json': golden.batchCreateNamespace,
 
   'delete-namespace.schema.json': ns.deleteNamespace(),
+  'delete-namespace.golden.json': golden.deleteNamespace,
+
   'batch-delete-namespace.schema.json': ns.batchDeleteNamespace(),
+  'batch-delete-namespace.golden.json': golden.batchDeleteNamespace,
 }
