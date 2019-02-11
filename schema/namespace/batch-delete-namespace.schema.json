@@ -4,9 +4,7 @@
    "properties": {
       "namespaces": {
          "items": {
-            "namespace": {
-               "type": "string"
-            }
+            "type": "string"
          },
          "type": "array"
       }

@@ -227,13 +227,13 @@ tx9ros8AAAD//zgsSV4KBAAA
 	"/namespace/batch-delete-namespace.schema.json": {
 		name:    "batch-delete-namespace.schema.json",
 		local:   "namespace/batch-delete-namespace.schema.json",
-		size:    383,
+		size:    339,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/2SQMW7DMAxFd59CYDtGYbcCHovOvQNjszaDWBIoLkbhuxeS4rRJRv3/+CD8n845B68y
-Qu9gNku5RzQxCl55kmy6HiViHmZeCAMtnBMNjCeyYfYjX9jY32I4NF3Dd2WPeM4x+JYeo044Kn2bf3u/
-il+uh0ljYjXhDL2rXyvpTf8/LYUYLw/ZHf9UldbWVArIphImuOu3v9d26J5vSJXW/aTCDQMTu1Tio+zi
-Pusu7uthl10TT2ceDLqt+w0AAP//tNWjxX8BAAA=
+H4sIAAAAAAAC/2SPMW7DMAxFd51CYDtGYbcCHovOvQMjszaDWBIoLkbhuxeyY7dI1sfnZ/0f572HV+mh
+8zCaldohmhiloDxINZ3PkrHGkSfCRBPXQpHxQhbH0PONjcOB4bTlNn1PdojXmlPY6DnrgL3St4W393v4
+5f5h0VxYTbhC59enNXrk/9N2EOPpgTVsc+H272oqaYC/43Jyzxap0rxLizs0MLHbany0rf5z3eq/Hrbu
+mXy5cjRwi/sNAAD//wW6edlTAQAA
 `,
 	},
 
