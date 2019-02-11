@@ -48,7 +48,21 @@ local batchCreateNamespace = {
   ],
 };
 
+local deleteNamespace = {
+  namespace: 'namespace-foo',
+};
+
+local batchDeleteNamespace = {
+  namespaces: [
+    'namespace-foo',
+    'namespace-bar',
+    'namespace-baz',
+  ],
+};
+
 {
   createNamespace:: createNamespace,
   batchCreateNamespace:: batchCreateNamespace,
+  deleteNamespace:: deleteNamespace,
+  batchDeleteNamespace:: batchDeleteNamespace,
 }
