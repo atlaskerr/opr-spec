@@ -90,7 +90,7 @@ local batchDeleteNamespace(output=jsonschema) = {
   properties: {
     namespaces: {
       type: 'array',
-      items: deleteNamespaceParams(output),
+      items: { type: 'string' },
     },
   },
 };
