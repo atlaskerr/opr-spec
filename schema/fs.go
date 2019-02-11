@@ -223,57 +223,17 @@ func _escFSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
-	"/namespace/batch-create-namespace.schema.json": {
-		name:    "batch-create-namespace.schema.json",
-		local:   "namespace/batch-create-namespace.schema.json",
-		size:    1034,
-		modtime: 1546544639,
-		compressed: `
-H4sIAAAAAAAC/8yTz26jQAyH7zzFaHaPIQNaErYc22tV9RUc4hJHmRnkcaVGEe9e8SdplADtsdefP3/Y
-g3yKlFL6L211ofROpA6FMUICLmasKAgfl+RNKHdowTiwGGoo0WxAyl1cMoJgfIn1otf1+FlZGLMP3sV9
-uvRcmS3Dm8RJPoj/DI01+xpZCIMuVDdam17012lbIEF7k01avsoH2OBhtNQ1gwiye511DOzylC6a6XqL
-yLHG9h2CMLlKj4PNSNwsohmd3+yxlDvdfVP3eFO7fjPciI2x9s9kSaaUFj7IvltdqPR/lq3zLEvyf3ny
-sFql63Q9upMlN7QkszuTE6yQfzJmEM9Q4a+bNJqZe/rfXoMXCpjheIY6cY9pITl0xGN7ouqpO1H1cnOi
-tx9ros8AAAD//zgsSV4KBAAA
-`,
-	},
-
-	"/namespace/batch-delete-namespace.schema.json": {
-		name:    "batch-delete-namespace.schema.json",
-		local:   "namespace/batch-delete-namespace.schema.json",
-		size:    339,
-		modtime: 1546544639,
-		compressed: `
-H4sIAAAAAAAC/2SPMW7DMAxFd51CYDtGYbcCHovOvQMjszaDWBIoLkbhuxeyY7dI1sfnZ/0f572HV+mh
-8zCaldohmhiloDxINZ3PkrHGkSfCRBPXQpHxQhbH0PONjcOB4bTlNn1PdojXmlPY6DnrgL3St4W393v4
-5f5h0VxYTbhC59enNXrk/9N2EOPpgTVsc+H272oqaYC/43Jyzxap0rxLizs0MLHbany0rf5z3eq/Hrbu
-mXy5cjRwi/sNAAD//wW6edlTAQAA
-`,
-	},
-
 	"/namespace/create-namespace.schema.json": {
 		name:    "create-namespace.schema.json",
 		local:   "namespace/create-namespace.schema.json",
-		size:    674,
+		size:    623,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/7ySy26zMBCF9zyF5f9fBgwqgZZtt1XVV3DIlEyELxpPpUYR715xCUmBdZc+PmfOp9Fc
-IyGE/I9HWQl5YvahUoqRtY0JGgxMlwSdCvUJjFZWGwhe16BqAs0Qz4LcjYNG421YpdQ5OBuPauKoUUfS
-nxyn5TTy3xT05DwQIwRZiQGqV1t9gPZRGayaGch+bCUmS3LNdt1K7n/44qGnC0xoG/nrv7u/ul20zrjD
-GWq+ZWaL7JewYNyuuUcIvHtDg7zIGf2N5svISmTPeV6UeZ6WT2X6st9nRVY8Qhm0kzPdYkXL0ACtmwM7
-0g38aXk0E0hGbgfP63BA4n1xQMtdd9FPAAAA///Uq161ogIAAA==
-`,
-	},
-
-	"/namespace/delete-namespace.schema.json": {
-		name:    "delete-namespace.schema.json",
-		local:   "namespace/delete-namespace.schema.json",
-		size:    266,
-		modtime: 1546544639,
-		compressed: `
-H4sIAAAAAAAC/1yOsY6DMAyGd54i8t14wbedlPnmvkMKLgRBEtleUMW7VyFQpE6Rvvz+9D0bYwx8hx6c
-gVE1i0PUoD5apiGI8tqGhNKNtHiMfiHJviPsaSYl+wbwU0V1eMoc4iQp2krbxAP27B9qf/8O5ddxmDll
-Yg0k4MweVeilv2DhuuaCQJRDHOD42cq7VZ8GnffJ/x5qbh+hpyHdJ+oUmq15BQAA//+Y4RVRCgEAAA==
+H4sIAAAAAAAC/7ySzW6DMBCE7zyF5fYIGFQCLddeq6qv4JAt2Qj/aL2VGkW8e8VPaAo59+jZb3ZG1l4i
+IYR8xIOshTwy+1ArxcjaJgQtBqZzik6F5ghGK6sNBK8bUA2BZkgWQcbTogm8LquVOgVnk0lNHbXqQPqT
+k6yaVz7MRk/OAzFCkLUYSw1qp/fQ3SojqpmB7Mc9x4yklzzuN/Iw4bOHoV1gQtvKP/P+99XH0dbj9ido
++OpZEEng3Rsa5FVRo7/RfBlZi/y5KMqqKLLqqcpedru8zMvbBIN2JrN7wWgZWqBtcmBHuoV/DY+WBpKR
+u5F5Ha9BvK+uYf1xffQTAAD//3L2US5vAgAA
 `,
 	},
 
@@ -295,9 +255,6 @@ var _escDirs = map[string][]os.FileInfo{
 	".": {},
 
 	"namespace": {
-		_escData["/namespace/batch-create-namespace.schema.json"],
-		_escData["/namespace/batch-delete-namespace.schema.json"],
 		_escData["/namespace/create-namespace.schema.json"],
-		_escData["/namespace/delete-namespace.schema.json"],
 	},
 }

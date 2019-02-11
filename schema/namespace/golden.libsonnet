@@ -13,7 +13,6 @@
 // limitations under the License.
 
 local createNamespace = {
-  name: 'namespace-foo',
   repoLimit: 100,
   storageLimit: 100000000000,
   labels: {
@@ -23,46 +22,6 @@ local createNamespace = {
   },
 };
 
-local batchCreateNamespace = {
-  namespaces: [
-    {
-      name: 'namespace-foo',
-      repoLimit: 100,
-      storageLimit: 100000000000,
-      labels: {
-        team: 'team-foo',
-        manager: 'Tom Ripe',
-        costCenter: 'cs-foo',
-      },
-    },
-    {
-      name: 'namespace-bar',
-      repoLimit: 50,
-      storageLimit: 100000000000,
-      labels: {
-        team: 'team-bar',
-        manager: 'Frank Rotten',
-        costCenter: 'cs-bar',
-      },
-    },
-  ],
-};
-
-local deleteNamespace = {
-  namespace: 'namespace-foo',
-};
-
-local batchDeleteNamespace = {
-  namespaces: [
-    'namespace-foo',
-    'namespace-bar',
-    'namespace-baz',
-  ],
-};
-
 {
   createNamespace:: createNamespace,
-  batchCreateNamespace:: batchCreateNamespace,
-  deleteNamespace:: deleteNamespace,
-  batchDeleteNamespace:: batchDeleteNamespace,
 }

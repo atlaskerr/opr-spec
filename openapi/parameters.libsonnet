@@ -12,10 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package schema
+local namespace = {
+  name: 'namespace',
+  'in': 'path',
+  required: true,
+  schema: { type: 'string' },
+};
 
-const (
-	// MediaTypeCreateNamespace specifies the media type for creating
-	// namespaces.
-	MediaTypeCreateNamespace = "application/vnd.titan-distribution.namespace.create.v1+json"
-)
+{
+  namespace:: namespace,
+}

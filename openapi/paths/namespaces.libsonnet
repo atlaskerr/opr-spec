@@ -14,6 +14,8 @@
 
 local example = import '../../schema/namespace/golden.libsonnet';
 local schema = import '../../schema/namespace/namespace.libsonnet';
+local params = import '../parameters.libsonnet';
+local resp = import '../responses.libsonnet';
 
 local mediaType = {
   createNamespace:: 'application/vnd.titan-distribution.namespace.create.v1+json',
@@ -22,14 +24,16 @@ local mediaType = {
   batchDeleteNamespace:: 'application/vnd.titan-distribution.namespace.batch-delete.v1+json',
 };
 
-local postOp = {
+local putNamespace = {
+
+  local responses = resp.ok
+                    + resp.badRequest
+                    + resp.unauthorized
+                    + resp.forbidden,
+
   tags: ['namespaces'],
   operationId: 'createNamespace',
-  responses: {
-    '200': {
-      description: 'OK',
-    },
-  },
+  responses: responses,
   requestBody: {
     required: true,
     content: {
@@ -37,25 +41,15 @@ local postOp = {
         schema: schema.createNamespace('openapi'),
         example: example.createNamespace,
       },
-      [mediaType.batchCreateNamespace]: {
-        schema: schema.batchCreateNamespace('openapi'),
-        example: example.batchCreateNamespace,
-      },
-      [mediaType.deleteNamespace]: {
-        schema: schema.deleteNamespace('openapi'),
-        example: example.deleteNamespace,
-      },
-      [mediaType.batchDeleteNamespace]: {
-        schema: schema.deleteNamespace('openapi'),
-        example: example.batchDeleteNamespace,
-      },
     },
   },
 };
 
-local pathItem = {
-  post: postOp,
+local singularPathItems = {
+  parameters: [params.namespace],
+  put: putNamespace,
 };
 
-
-pathItem
+{
+  '/namespaces/{namespace}': singularPathItems,
+}

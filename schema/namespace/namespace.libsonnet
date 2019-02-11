@@ -18,9 +18,6 @@ local V7 = 'http://json-schema.org/draft-07/schema#';
 
 local jid = {
   createNamespace: 'https://titan-registry.io/schema/namespace/create-namespace',
-  batchCreateNamespace: 'https://titan-registry.io/schema/namespace/batch-create-namespace',
-  deleteNamespace: 'https://titan-registry.io/schema/namespace/delete-namespace',
-  batchDeleteNamespace: 'https://titan-registry.io/schema/namespace/batch-delete-namespace',
 };
 
 local uint64 = {
@@ -44,7 +41,6 @@ local mapStringString(output=jsonschema) = {
 local createNamespaceParams(output=jsonschema) = {
   type: 'object',
   properties: {
-    name: { type: 'string' },
     storageLimit: uint64,
     repoLimit: uint64,
     labels: mapStringString(output),
@@ -57,47 +53,6 @@ local createNamespace(output=jsonschema) = createNamespaceParams(output) {
   title: 'Create Namespace',
 };
 
-local batchCreateNamespace(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.batchCreateNamespace,
-  [if output == jsonschema then '$schema']: V7,
-  title: 'Batch Create Namespace',
-  type: 'object',
-  properties: {
-    namespaces: {
-      type: 'array',
-      items: createNamespaceParams(output),
-    },
-  },
-};
-
-local deleteNamespaceParams(output=jsonschema) = {
-  namespace: { type: 'string' },
-};
-
-local deleteNamespace(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.deleteNamespace,
-  [if output == jsonschema then '$schema']: V7,
-  title: 'Delete Namespace',
-  type: 'object',
-  properties: deleteNamespaceParams(output),
-};
-
-local batchDeleteNamespace(output=jsonschema) = {
-  [if output == jsonschema then '$id']: jid.batchDeleteNamespace,
-  [if output == jsonschema then '$schema']: V7,
-  title: 'Batch Delete Namespace',
-  type: 'object',
-  properties: {
-    namespaces: {
-      type: 'array',
-      items: { type: 'string' },
-    },
-  },
-};
-
 {
   createNamespace:: createNamespace,
-  batchCreateNamespace:: batchCreateNamespace,
-  deleteNamespace:: deleteNamespace,
-  batchDeleteNamespace:: batchDeleteNamespace,
 }

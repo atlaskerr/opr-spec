@@ -4,7 +4,6 @@
       "manager": "Tom Ripen",
       "team": "team-foo"
    },
-   "name": "namespace-foo",
    "repoLimit": 100,
    "storageLimit": 100000000000
 }

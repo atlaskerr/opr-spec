@@ -12,10 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package schema
+local ok = {
+  '200': { description: 'OK' },
+};
 
-const (
-	// MediaTypeCreateNamespace specifies the media type for creating
-	// namespaces.
-	MediaTypeCreateNamespace = "application/vnd.titan-distribution.namespace.create.v1+json"
-)
+local badRequest = {
+  '400': { description: 'Bad Request' },
+};
+
+local unauthorized = {
+  '401': { description: 'Unauthorized' },
+};
+
+local forbidden = {
+  '403': { description: 'Forbidden' },
+};
+
+{
+  ok:: ok,
+  badRequest:: badRequest,
+  unauthorized:: unauthorized,
+  forbidden:: forbidden,
+}

@@ -14,8 +14,6 @@
 
 local namespaces = import 'namespaces.libsonnet';
 
-local paths = {
-  '/namespaces': namespaces,
-};
+local paths = namespaces;
 
 paths
