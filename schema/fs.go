@@ -237,6 +237,20 @@ u5F5Ha9BvK+uYf1xffQTAAD//3L2US5vAgAA
 `,
 	},
 
+	"/namespace/namespace.schema.json": {
+		name:    "namespace.schema.json",
+		local:   "namespace/namespace.schema.json",
+		size:    890,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/8RSTUvDQBC951cscw6SYJpobqUUCWgRiV7Ew1aHsNL9YHcCStn/Ll1qm4+9eKnHffPe
+vse82SeMMTBWG7Qk0EHNAnRAd3yLuyESqJwIrXqMKY6Uq32e+hl8mNC3QagZOLJCdTCa+/PLp8lco7ef
++E6/mhMFFJc4yRi3OUssGr3SvaKJTvIvIXsJNctviqKsiiKrrqvsdrHIy7wchpJCHZlZLKtQhB3auPO9
+kOLyzo449dMyUYWfXsf9LVdt87KGdIy266eHZrNsm83doLi39A97d6Qt7/C/FhDMnx1+XMo7OQWYXbFP
+fgIAAP//iSudGnoDAAA=
+`,
+	},
+
 	"/": {
 		name:  "/",
 		local: `.`,
@@ -256,5 +270,6 @@ var _escDirs = map[string][]os.FileInfo{
 
 	"namespace": {
 		_escData["/namespace/create-namespace.schema.json"],
+		_escData["/namespace/namespace.schema.json"],
 	},
 }
