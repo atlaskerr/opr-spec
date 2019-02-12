@@ -38,6 +38,25 @@ local mapStringString(output=jsonschema) = {
   },
 };
 
+local namespace(output=jsonschema) = {
+  type: 'object',
+  properties: {
+    name: { type: 'string' },
+    storageLimit: uint64,
+    storageUsed: uint64,
+    repoLimit: uint64,
+    repoCount: uint64,
+    labels: mapStringString(output),
+    status: {
+      type: 'string',
+      enum: [
+        'ACTIVE',
+        'TERMINATING',
+      ],
+    },
+  },
+};
+
 local createNamespaceParams(output=jsonschema) = {
   type: 'object',
   properties: {
@@ -54,5 +73,6 @@ local createNamespace(output=jsonschema) = createNamespaceParams(output) {
 };
 
 {
+  namespace:: namespace,
   createNamespace:: createNamespace,
 }

@@ -12,6 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local namespace = {
+  name: 'namespace-foo',
+  storageLimit: 548298572358,
+  storageUsed: 580324752,
+  repoLimit: 100,
+  repoCount: 23,
+  labels: {
+    team: 'team-foo',
+    manager: 'Tom Ripen',
+    costCenter: 'cs-foo',
+  },
+};
+
 local createNamespace = {
   repoLimit: 100,
   storageLimit: 100000000000,
@@ -23,5 +36,6 @@ local createNamespace = {
 };
 
 {
+  namespace:: namespace,
   createNamespace:: createNamespace,
 }

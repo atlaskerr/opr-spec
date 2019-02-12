@@ -16,6 +16,9 @@ local golden = import 'golden.libsonnet';
 local ns = import 'namespace.libsonnet';
 
 {
+  'namespace.schema.json': ns.namespace(),
+  'namespace.golden.json': golden.namespace,
+
   'create-namespace.schema.json': ns.createNamespace(),
   'create-namespace.golden.json': golden.createNamespace,
 }
