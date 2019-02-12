@@ -26,14 +26,9 @@ local mediaType = {
 
 local putNamespace = {
 
-  local responses = resp.ok
-                    + resp.badRequest
-                    + resp.unauthorized
-                    + resp.forbidden,
-
   tags: ['namespaces'],
   operationId: 'createNamespace',
-  responses: responses,
+  responses: resp.baseResponses,
   requestBody: {
     required: true,
     content: {
@@ -45,9 +40,17 @@ local putNamespace = {
   },
 };
 
+local deleteNamespace = {
+
+  tags: ['namespaces'],
+  operationId: 'deleteNamespace',
+  responses: resp.baseResponses,
+};
+
 local singularPathItems = {
   parameters: [params.namespace],
   put: putNamespace,
+  delete: deleteNamespace,
 };
 
 {

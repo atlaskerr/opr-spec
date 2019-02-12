@@ -28,7 +28,13 @@ local forbidden = {
   '403': { description: 'Forbidden' },
 };
 
+local baseResponses = ok
+                      + unauthorized
+                      + forbidden
+                      + badRequest;
+
 {
+  baseResponses:: baseResponses,
   ok:: ok,
   badRequest:: badRequest,
   unauthorized:: unauthorized,
