@@ -18,14 +18,27 @@ local params = import '../parameters.libsonnet';
 local resp = import '../responses.libsonnet';
 
 local mediaType = {
+  namespace:: 'application/vnd.titan-distribution.namespace.v1+json',
   createNamespace:: 'application/vnd.titan-distribution.namespace.create.v1+json',
-  batchCreateNamespace:: 'application/vnd.titan-distribution.namespace.batch-create.v1+json',
-  deleteNamespace:: 'application/vnd.titan-distribution.namespace.delete.v1+json',
-  batchDeleteNamespace:: 'application/vnd.titan-distribution.namespace.batch-delete.v1+json',
+};
+
+local getNamespace = {
+  tags: ['namespaces'],
+  operationId: 'getNamespace',
+  responses: resp.baseResponses {
+    '200': {
+      description: 'OK',
+      content: {
+        [mediaType.namespace]: {
+          schema: schema.namespace('openapi'),
+          example: example.namespace,
+        },
+      },
+    },
+  },
 };
 
 local putNamespace = {
-
   tags: ['namespaces'],
   operationId: 'createNamespace',
   responses: resp.baseResponses,
@@ -41,7 +54,6 @@ local putNamespace = {
 };
 
 local deleteNamespace = {
-
   tags: ['namespaces'],
   operationId: 'deleteNamespace',
   responses: resp.baseResponses,
@@ -49,6 +61,7 @@ local deleteNamespace = {
 
 local singularPathItems = {
   parameters: [params.namespace],
+  get: getNamespace,
   put: putNamespace,
   delete: deleteNamespace,
 };

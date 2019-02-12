@@ -30,6 +30,85 @@
                "namespaces"
             ]
          },
+         "get": {
+            "operationId": "getNamespace",
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/vnd.titan-distribution.namespace.v1+json": {
+                        "example": {
+                           "labels": {
+                              "costCenter": "cs-foo",
+                              "manager": "Tom Ripen",
+                              "team": "team-foo"
+                           },
+                           "name": "namespace-foo",
+                           "repoCount": 23,
+                           "repoLimit": 100,
+                           "storageLimit": 548298572358,
+                           "storageUsed": 580324752
+                        },
+                        "schema": {
+                           "properties": {
+                              "labels": {
+                                 "type": "object",
+                                 "x-patternProperties": {
+                                    ".{1,}": {
+                                       "type": "string"
+                                    }
+                                 }
+                              },
+                              "name": {
+                                 "type": "string"
+                              },
+                              "repoCount": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              },
+                              "repoLimit": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              },
+                              "status": {
+                                 "enum": [
+                                    "ACTIVE",
+                                    "TERMINATING"
+                                 ],
+                                 "type": "string"
+                              },
+                              "storageLimit": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              },
+                              "storageUsed": {
+                                 "maximum": 18446744073709551616,
+                                 "minimum": 0,
+                                 "type": "integer"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               },
+               "400": {
+                  "description": "Bad Request"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            },
+            "tags": [
+               "namespaces"
+            ]
+         },
          "parameters": [
             {
                "in": "path",
