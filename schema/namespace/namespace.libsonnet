@@ -17,6 +17,7 @@ local jsonschema = 'jsonschema';
 local V7 = 'http://json-schema.org/draft-07/schema#';
 
 local jid = {
+  namespace: 'https://titan-registry.io/schema/namespace',
   createNamespace: 'https://titan-registry.io/schema/namespace/create-namespace',
 };
 
@@ -39,6 +40,8 @@ local mapStringString(output=jsonschema) = {
 };
 
 local namespace(output=jsonschema) = {
+  [if output == jsonschema then '$id']: jid.namespace,
+  [if output == jsonschema then '$schema']: V7,
   type: 'object',
   properties: {
     name: { type: 'string' },
@@ -57,19 +60,16 @@ local namespace(output=jsonschema) = {
   },
 };
 
-local createNamespaceParams(output=jsonschema) = {
+local createNamespace(output=jsonschema) = {
+  [if output == jsonschema then '$id']: jid.createNamespace,
+  [if output == jsonschema then '$schema']: V7,
+  title: 'Create Namespace',
   type: 'object',
   properties: {
     storageLimit: uint64,
     repoLimit: uint64,
     labels: mapStringString(output),
   },
-};
-
-local createNamespace(output=jsonschema) = createNamespaceParams(output) {
-  [if output == jsonschema then '$id']: jid.createNamespace,
-  [if output == jsonschema then '$schema']: V7,
-  title: 'Create Namespace',
 };
 
 {
