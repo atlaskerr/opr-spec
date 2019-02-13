@@ -19,6 +19,13 @@ local namespace = {
   schema: { type: 'string' },
 };
 
+local label = {
+  name: 'label',
+  'in': 'query',
+  schema: { type: 'string' },
+};
+
 {
   namespace:: namespace,
+  label:: label,
 }

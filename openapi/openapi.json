@@ -12,6 +12,15 @@
       "/namespaces": {
          "get": {
             "operationId": "listNamespaces",
+            "parameters": [
+               {
+                  "in": "query",
+                  "name": "label",
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
             "responses": {
                "200": {
                   "content": {
@@ -108,21 +117,21 @@
             "tags": [
                "namespaces"
             ]
-         },
-         "parameters": [
-            {
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ]
+         }
       },
       "/namespaces/{namespace}": {
          "delete": {
             "operationId": "deleteNamespace",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK"
@@ -143,6 +152,16 @@
          },
          "get": {
             "operationId": "getNamespace",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
             "responses": {
                "200": {
                   "content": {
@@ -220,18 +239,18 @@
                "namespaces"
             ]
          },
-         "parameters": [
-            {
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ],
          "put": {
             "operationId": "createNamespace",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "namespace",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  }
+               }
+            ],
             "requestBody": {
                "content": {
                   "application/vnd.titan-distribution.namespace-create.v1+json": {

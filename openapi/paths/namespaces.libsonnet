@@ -26,6 +26,7 @@ local mediaType = {
 local getNamespace = {
   tags: ['namespaces'],
   operationId: 'getNamespace',
+  parameters: [params.namespace],
   responses: resp.baseResponses {
     '200': {
       description: 'OK',
@@ -42,6 +43,7 @@ local getNamespace = {
 local putNamespace = {
   tags: ['namespaces'],
   operationId: 'createNamespace',
+  parameters: [params.namespace],
   responses: resp.baseResponses,
   requestBody: {
     required: true,
@@ -57,19 +59,15 @@ local putNamespace = {
 local deleteNamespace = {
   tags: ['namespaces'],
   operationId: 'deleteNamespace',
+  parameters: [params.namespace],
   responses: resp.baseResponses,
 };
 
-local namespace = {
-  parameters: [params.namespace],
-  get: getNamespace,
-  put: putNamespace,
-  delete: deleteNamespace,
-};
 
 local listNamespaces = {
   tags: ['namespaces'],
   operationId: 'listNamespaces',
+  parameters: [params.label],
   responses: resp.baseResponses {
     '200': {
       description: 'OK',
@@ -83,8 +81,13 @@ local listNamespaces = {
   },
 };
 
+local namespace = {
+  get: getNamespace,
+  put: putNamespace,
+  delete: deleteNamespace,
+};
+
 local namespaces = {
-  parameters: [params.namespace],
   get: listNamespaces,
 };
 
