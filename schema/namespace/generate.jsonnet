@@ -21,4 +21,7 @@ local ns = import 'namespace.libsonnet';
 
   'create-namespace.schema.json': ns.createNamespace(),
   'create-namespace.golden.json': golden.createNamespace,
+
+  'list-namespaces.schema.json': ns.listNamespaces(),
+  'list-namespaces.golden.json': golden.listNamespaces,
 }

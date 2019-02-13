@@ -35,7 +35,37 @@ local createNamespace = {
   },
 };
 
+local listNamespaces = {
+  namespaces: [
+    {
+      name: 'namespace-foo',
+      storageLimit: 548298572358,
+      storageUsed: 580324752,
+      repoLimit: 100,
+      repoCount: 23,
+      labels: {
+        team: 'team-foo',
+        manager: 'Tom Ripen',
+        costCenter: 'cs-foo',
+      },
+    },
+    {
+      name: 'namespace-bar',
+      storageLimit: 850834823484,
+      storageUsed: 584920542,
+      repoLimit: 200,
+      repoCount: 74,
+      labels: {
+        team: 'team-bar',
+        manager: 'Frank Cousins',
+        costCenter: 'cs-bar',
+      },
+    },
+  ],
+};
+
 {
   namespace:: namespace,
   createNamespace:: createNamespace,
+  listNamespaces:: listNamespaces,
 }

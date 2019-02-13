@@ -18,7 +18,8 @@ local V7 = 'http://json-schema.org/draft-07/schema#';
 
 local jid = {
   namespace: 'https://titan-registry.io/schema/namespace',
-  createNamespace: 'https://titan-registry.io/schema/namespace/create-namespace',
+  createNamespace: 'https://titan-registry.io/schema/namespace/namespace-create',
+  listNamespaces: 'https://titan-registry.io/schema/namespace-list',
 };
 
 local uint64 = {
@@ -72,7 +73,21 @@ local createNamespace(output=jsonschema) = {
   },
 };
 
+local listNamespaces(output=jsonschema) = {
+  [if output == jsonschema then '$id']: jid.listNamespaces,
+  [if output == jsonschema then '$schema']: V7,
+  title: 'List Namespaces',
+  type: 'object',
+  properties: {
+    namespaces: {
+      type: 'array',
+      items: namespace(''),
+    },
+  },
+};
+
 {
   namespace:: namespace,
   createNamespace:: createNamespace,
+  listNamespaces:: listNamespaces,
 }
