@@ -102,7 +102,15 @@
                         }
                      }
                   },
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Link": {
+                        "description": "RFC 5988 compliant Link header",
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  }
                },
                "400": {
                   "description": "Bad Request"

@@ -14,6 +14,7 @@
 
 local example = import '../../schema/namespace/golden.libsonnet';
 local schema = import '../../schema/namespace/namespace.libsonnet';
+local header = import '../headers.libsonnet';
 local params = import '../parameters.libsonnet';
 local resp = import '../responses.libsonnet';
 
@@ -71,6 +72,8 @@ local listNamespaces = {
   responses: resp.baseResponses {
     '200': {
       description: 'OK',
+      headers: {}
+               + header.link,
       content: {
         [mediaType.listNamespaces]: {
           schema: schema.listNamespaces('openapi'),
